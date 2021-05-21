@@ -1,0 +1,27 @@
+{
+  "name": "tracks",
+  "version": "1.0.0",
+  "description": "Best tracks ever",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "start http://localhost:3000 && http-server --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dadidam/tracks.git"
+  },
+  "keywords": [
+    "music",
+    "tracks"
+  ],
+  "author": "Ilia V.",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Dadidam/tracks/issues"
+  },
+  "homepage": "https://github.com/Dadidam/tracks#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
