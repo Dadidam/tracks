@@ -9,15 +9,12 @@ header {
   text-align: center;
 }
 
-#track-list {
-  padding-top: 25px;
-}
-
 /* Cards styling */
 #cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: 25px;
 }
 
 .card {
@@ -74,7 +71,7 @@ li {
   display: inline-block;
   font-size: 2em;
   font-weight: bold;
-  margin-left: 0.1em;
+  margin-left: 0.25em;
   padding: 0.25em;
   text-decoration: none;
 }
