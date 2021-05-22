@@ -1,10 +1,11 @@
 body {
   font-family: "Montserrat", sans-serif;
+  font-size: 10px;
 }
 
 header {
-  font-size: 36px;
-  font-weight: 500;
+  font-size: 3rem;
+  font-weight: 800;
   text-align: center;
 }
 
@@ -17,7 +18,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0px 15px;
 }
 
 .card {
@@ -35,6 +35,71 @@ header {
 }
 
 .card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 15px 0;
-  text-align: center;
+  align-items: center;
+}
+
+.card__info--artist h3 {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+.card__info--title {
+  font-size: 2.5em;
+}
+
+.card__info--genre {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Genre labels, blocks */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li:first-of-type {
+  margin-left: 0;
+}
+
+li {
+  color: white;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-left: 0.1em;
+  padding: 0.25em;
+  text-decoration: none;
+}
+
+/* Genre labels, colors */
+.bossanova {
+  background-color: #f38530;
+}
+
+.soul {
+  background-color: #76d3de;
+}
+
+.electronic {
+  background-color: #b3cc57;
+}
+
+.pop {
+  background-color: #e64d62;
+}
+
+.alternative {
+  background-color: #7646a2;
+}
+
+.rock {
+  background-color: #33749e;
 }
