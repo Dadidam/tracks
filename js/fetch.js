@@ -1,5 +1,5 @@
 function fetchTracks() {
-  const app = document.querySelector("#app");
+  const app = document.querySelector("#track-list");
   app.innerHTML = "Loading...";
 
   fetch("tracks/top.json")
