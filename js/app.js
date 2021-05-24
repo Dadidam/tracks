@@ -31,11 +31,19 @@ function sortByArtist() {
 }
 
 function sortByPlayCount() {
-  //
+  const tracks = getSavedTracks();
+
+  tracks.sort((x, y) => Number(y.playCount) - Number(x.playCount));
+
+  renderTrackList(tracks);
 }
 
 function sortRandomly() {
-  //
+  const tracks = getSavedTracks();
+
+  tracks.sort(() => Math.random() - 0.5);
+
+  renderTrackList(tracks);
 }
 
 function showAlert(message = "Test") {
