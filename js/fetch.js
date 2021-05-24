@@ -1,3 +1,7 @@
+function showAlert(message = 'Test') {
+  alert(message);
+}
+
 // Returns html layout for genre labels
 function generateGenres(genresList) {
   if (genresList && genresList.length) {
