@@ -23,9 +23,10 @@ function renderTrack(track) {
   const { artist, title, genre } = track;
   const imageTitle = getImageByArtistName(artist);
   const genresList = generateGenres(genre);
+  const imgAlt = `${artist} — ${title}`;
 
   return `<div class="card">
-  <img src="images/artists/${imageTitle}.jpg" alt="" />
+  <img src="images/artists/${imageTitle}.jpg" alt="${imgAlt}" />
   <div class="card__info">
     <div class="card__info--artist">
       <h3>${artist}</h3>
@@ -38,10 +39,23 @@ function renderTrack(track) {
 </div>`;
 }
 
-function fetchTracks() {
-  const app = document.querySelector("#cards");
-  app.innerHTML = "Loading...";
+function renderTrackList(tracks) {
+  const cards = document.querySelector("#cards");
+  const html = tracks.map(track => renderTrack(track)).join("");
 
+  // get rid of "preloader"
+  cards.innerHTML = "";
+
+  // update html layout with a list of tracks
+  cards.insertAdjacentHTML("afterbegin", html);
+
+  // save data as data attribute
+  cards.setAttribute("data-tracks", JSON.stringify(tracks));
+
+  console.log("Tracks:", JSON.parse(cards.getAttribute("data-tracks")));
+}
+
+function fetchTracks() {
   fetch("tracks/top.json")
     .then(res => {
       if (!res.ok) {
@@ -51,16 +65,7 @@ function fetchTracks() {
       return res.json();
     })
     .then(data => {
-      const html = data.tracks
-        // .map(track => `<p>Title: ${track.title}</p>`)
-        .map(track => renderTrack(track))
-        .join("");
-
-      // get rid of "preloader"
-      app.innerHTML = "";
-
-      // update html layout with a list of tracks
-      app.insertAdjacentHTML("afterbegin", html);
+      renderTrackList(data.tracks);
     })
     .catch(error => console.error(error));
 }
