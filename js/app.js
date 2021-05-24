@@ -1,4 +1,44 @@
-function showAlert(message = 'Test') {
+const dataAtribute = "data-tracks";
+
+function getSavedTracks() {
+  const cards = document.querySelector("#cards");
+
+  if (cards.hasAttribute(dataAtribute)) {
+    return JSON.parse(cards.getAttribute(dataAtribute));
+  }
+
+  console.warn("No saved tracks found.");
+
+  return [];
+}
+
+function sortByArtist() {
+  const tracks = getSavedTracks();
+
+  // apply sorting rule by `artist field`
+  tracks.sort((x, y) => {
+    const artistX = x.artist.toUpperCase();
+    const artistY = y.artist.toUpperCase();
+
+    if (artistX < artistY) return -1;
+    if (artistX > artistY) return 1;
+
+    return 0;
+  });
+
+  // now just re-render the list by passing sorted list to the renderer helper
+  renderTrackList(tracks);
+}
+
+function sortByPlayCount() {
+  //
+}
+
+function sortRandomly() {
+  //
+}
+
+function showAlert(message = "Test") {
   alert(message);
 }
 
