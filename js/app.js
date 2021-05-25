@@ -102,9 +102,9 @@ function renderTrackList(tracks) {
   cards.insertAdjacentHTML("afterbegin", html);
 
   // save data as data attribute
-  cards.setAttribute("data-tracks", JSON.stringify(tracks));
+  cards.setAttribute(dataAtribute, JSON.stringify(tracks));
 
-  console.log("Tracks:", JSON.parse(cards.getAttribute("data-tracks")));
+  console.log("Tracks:", JSON.parse(cards.getAttribute(dataAtribute)));
 }
 
 function fetchTracks() {
